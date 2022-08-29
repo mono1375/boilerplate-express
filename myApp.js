@@ -13,10 +13,14 @@ app
   res.sendFile(__dirname + "/views/index.html")
 })
   .get('/json',(req,res)=>{
-  
-  let response ='Hello World'
-  (process.env.MESSAGE_STYLE==='uppercase')? response = response.toUpperCase():response = response;res.json({'message': response})
+    let msg ={
+      "message": "Hello json"
+    }
+    (process.env.MESSAGE_STYLE==='uppercase')?msg.message =msg.message.toUpperCase():res.json(msg);  
+
 })
+
+
 console.log('Hello World');
 
 
