@@ -17,7 +17,7 @@ app
   res.sendFile(__dirname + "/views/index.html")
 })
   .get('/json',(req,res)=>{
-  res.json({"message": "Hello json"})
+  res.json({"message": response})
 })
 console.log('Hello World');
 
