@@ -13,10 +13,16 @@ app
   res.sendFile(__dirname + "/views/index.html")
 })
   .get('/json',(req,res)=>{
-    let msg ={
+    var response = {
       "message": "Hello json"
+    };
+    
+    if(process.env.MESSAGE_STYLE==='uppercase'){
+      //Override message attribute value based on condition
+      response.message = response.message.toUpperCase();  
     }
-    (process.env.MESSAGE_STYLE==='uppercase')?msg.message =msg.message.toUpperCase():res.json(msg);  
+    
+    return res.json(response); 
 
 })
 
