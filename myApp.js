@@ -1,6 +1,6 @@
 let express = require('express');
-let app = express();
 require('dotenv').config()
+let app = express();
 
 app.use(express.static(__dirname+ '/public'))
 app.use('/public',express.static(__dirname+ '/public'))
@@ -26,7 +26,7 @@ app
 })
 
 
-console.log('Hello World');
+console.log(process.env.MESSAGE_STYLE);
 
 
 
