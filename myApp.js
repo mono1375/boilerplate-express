@@ -21,6 +21,7 @@ app
         res.json({
       "message": "Hello json"
     })
+      };
 
 })
 
