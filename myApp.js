@@ -48,7 +48,7 @@ app
   })
   .post('/name',(req,res)=>{
     let name = `${req.query.first} ${req.query.last}`
-    res.json({name:name})
+    res.json({name: name})
   })
 const middleware = (req,res,next)=>{
   req.time =  new Date().toString()
