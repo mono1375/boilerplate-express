@@ -26,6 +26,15 @@ app
       };
 
 })
+const middleware = (req,res,next){
+  req.time =  new Date().toString()
+  next()
+}
+app.get('/now',middleware,(req,res)=>{
+  res.send({
+    time: req.time
+  })
+})
 
 
 console.log(process.env.MESSAGE_STYLE);
