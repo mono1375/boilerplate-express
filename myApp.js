@@ -1,9 +1,12 @@
 let express = require('express');
+const bodyParser = require('body-parser')
 require('dotenv').config()
 let app = express();
 
 app.use(express.static(__dirname+ '/public'))
 app.use('/public',express.static(__dirname+ '/public'))
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
 
 
 app.use((req,res,next)=>{
