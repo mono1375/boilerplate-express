@@ -47,7 +47,7 @@ app
     });
   })
   .post('/name',(req,res)=>{
-    let name = `${req.query.first} ${req.query.last}`
+    let name = `${req.body.first} ${req.body.last}`
     res.json({name: name})
   })
 const middleware = (req,res,next)=>{
