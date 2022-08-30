@@ -32,6 +32,12 @@ app
       echo:word
     })
   })
+  .get('/name',()=>{
+    let {first: firstName, last: lastName} = req.query  
+    res.json({
+      name: `${firstName} ${lastName}`
+    })
+  })
 
 const middleware = (req,res,next)=>{
   req.time =  new Date().toString()
