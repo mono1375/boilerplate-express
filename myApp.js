@@ -35,7 +35,8 @@ app
       echo:word
     })
   })
-app.get("/name", function(req, res) {
+app
+  .get("/name", function(req, res) {
     var firstName = req.query.first;
     var lastName = req.query.last;
     // OR you can destructure and rename the keys
@@ -44,7 +45,11 @@ app.get("/name", function(req, res) {
     res.json({
       name: `${firstName} ${lastName}`
     });
-  });
+  })
+  .post('/name',(req,res)=>{
+    let name = `${req.query.first} ${req.query.last}`
+    res.json({name:name})
+  })
 const middleware = (req,res,next)=>{
   req.time =  new Date().toString()
   next()
