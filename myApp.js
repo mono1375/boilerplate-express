@@ -26,7 +26,7 @@ app
       };
 
 })
-const middleware = (req,res,next){
+const middleware = (req,res,next)=>{
   req.time =  new Date().toString()
   next()
 }
