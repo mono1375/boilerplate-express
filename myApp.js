@@ -5,7 +5,11 @@ let app = express();
 app.use(express.static(__dirname+ '/public'))
 app.use('/public',express.static(__dirname+ '/public'))
 
-
+app.use(function middleware(req,res,next){
+  var string = req.method + ' ' + req.path +'-'+req.ip
+  console.log(string);
+  next();
+})
 
 
 app
