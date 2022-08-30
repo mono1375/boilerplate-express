@@ -26,6 +26,13 @@ app
       };
 
 })
+  .get('/:word/echo',(req,res)=>{
+    let {word}=req.params
+    res.json({
+      echo:word
+    })
+  })
+
 const middleware = (req,res,next)=>{
   req.time =  new Date().toString()
   next()
@@ -35,6 +42,7 @@ app.get('/now',middleware,(req,res)=>{
     time: req.time
   })
 })
+
 
 
 console.log(process.env.MESSAGE_STYLE);
